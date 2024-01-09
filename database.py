@@ -1,6 +1,12 @@
 from sqlalchemy import create_engine, text
+import os
 
-db_connection_string = "mysql+pymysql://r1601cb4k2p0766moldr:pscale_pw_6KEqtMH4Oxc0qhYNCDcX0W7p77nqhr9mQiN3JYuOMEd@aws.connect.psdb.cloud/flaskcareers?charset=utf8mb4"
+DB_DATABASE = os.environ['DB_DATABASE']
+DB_USERNAME = os.environ['DB_USERNAME']
+DB_HOST = os.environ['DB_HOST']
+DB_PASSWORD = os.environ['DB_PASSWORD']
+
+db_connection_string = f"mysql+pymysql://{DB_USERNAME}:{DB_PASSWORD}@{DB_HOST}/{DB_DATABASE}?charset=utf8mb4"
 
 engine = create_engine(
   db_connection_string,
@@ -9,6 +15,7 @@ engine = create_engine(
       "ssl_ca": "/etc/ssl/cert.pem"
     }
   })
+
 
 def load_jobs_from_db():
   with engine.connect() as conn:
