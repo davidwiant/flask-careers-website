@@ -1,12 +1,7 @@
 from sqlalchemy import create_engine, text
 import os
 
-DB_DATABASE = os.environ['DB_DATABASE']
-DB_USERNAME = os.environ['DB_USERNAME']
-DB_HOST = os.environ['DB_HOST']
-DB_PASSWORD = os.environ['DB_PASSWORD']
-
-db_connection_string = f"mysql+pymysql://{DB_USERNAME}:{DB_PASSWORD}@{DB_HOST}/{DB_DATABASE}?charset=utf8mb4"
+db_connection_string = os.environ['DB_CONNECTION_STRING']
 
 engine = create_engine(
   db_connection_string,
