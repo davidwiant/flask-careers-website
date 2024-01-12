@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{job.title}} - Flask Careers</title>
+    <!-- Add your CSS file link here -->
+  {% include 'bootstrap.html' %}    
+</head>
+<body>
+    <h3>Title</h3>
+    <p>{{job.title}}</p>
+    <h3>Location</h3>
+    <p>{{job.location}}</p>
+    <h3>Salary</h3>
+    <p>{{job.salary}}{{job.currency}}</p>
+    <h3>Requirements</h3>
+    <p>{{job.requirements}}</p>
+    <h3>Responsibilities</h3>
+    <p>{{job.responsibilities}}</p>
+
+    <header>
+        <!-- Header content goes here -->
+    </header>
+
+    <nav>
+        <!-- Navigation menu goes here -->
+    </nav>
+
+    <main>
+        <!-- Main content goes here -->
+    </main>
+
+    <footer>
+        <!-- Footer content goes here -->
+    </footer>
+
+
+</body>
+</html>
